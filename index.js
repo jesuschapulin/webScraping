@@ -41,6 +41,7 @@ async function readRelationsLatindexCsi() {
             const lines = data.split(/\r\n|\r|\n/, -1);
             console.log("------------tamaño de lineas de csv saved----------" + lines.length);
             cont = 0;
+            /// se hace un ciclo para recorrer las revistas guardadas
             lines.forEach((item, value) => {
                 cont++;
                 if (item != "") {
