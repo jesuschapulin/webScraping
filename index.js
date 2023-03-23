@@ -9,7 +9,8 @@ const arrayData = [];
 const arrayDataSaved = [];
 const cadenaEmails = [];
 /*M1: Estas instrucciones importan las bibliotecas "cheerio" y "axios", 
-luego crean tres arrays vacíos que se utilizarán más adelante en el código.*/
+luego crean tres arrays vacíos que se utilizarán más adelante en el código....*/
+//PPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPP
 var cadenaSimple = "";
 var fileUrl = "./srcData/journalcsvIT10.csv";
 var fileUrlSaved = "./srcData/journalDataFinish.csv";
