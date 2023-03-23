@@ -9,12 +9,17 @@ const arrayData = [];
 const arrayDataSaved = [];
 const cadenaEmails = [];
 /*M1: Estas instrucciones importan las bibliotecas "cheerio" y "axios", 
-luego crean tres arrays vacíos que se utilizarán más adelante en el código....*/
-//PPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPP
+luego crean tres arrays vacíos que se utilizarán más adelante en el código*/
+
+/*M2*/
 var cadenaSimple = "";
 var fileUrl = "./srcData/journalcsvIT10.csv";
 var fileUrlSaved = "./srcData/journalDataFinish.csv";
 var emailFound = "";
+/*M2: Estas instrucciones declaran variables, algunas de ellas contienen la 
+ruta de algunos archivos*/
+
+/*M3*/
 async function performScraping() {
     let dataFull;
     const fs = require("fs");
@@ -30,7 +35,11 @@ async function performScraping() {
             console.log(data);
         }
     }
+/*M3: Estas instrucciones realizan un proceso de web scraping donde valida que 
+al menos se contenga una ",", desplegando un mensaje si la información ha sido 
+guardada o no dentro de nuestro parámetro data*/
 
+/*M4*/
     function readInfoFromFileSaved() {
         fs.readFile(fileUrlSaved, "utf-8", (err, data) => {
             if (err) {
@@ -52,7 +61,12 @@ async function performScraping() {
             console.log(lines);
         });
     }
-
+/*M4: Estas instrucciones leen un archivo de texto y devuelven su contenido en la variable
+"data", verifica si se produjo un error al leer el archivo y de ser así lo imprime en la 
+consola, posterior a ello se divide el contenido en líneas y se almacenan en un array
+llamado "lines", no se descarta ninguna línea al dividir el archivo, a su vez, se imprime en la 
+consola el número de líneas que se leyeron del archivo, se muestra en consola cuando
+se ha leído todo el archivo e imprime el contenido en forma de array */
     function getEmailPage(url, nombre, urlJournalDoaj, urlJournalIssn, urlJournalEissn) {
         var resp = "";
         const params = {
@@ -154,10 +168,12 @@ async function performScraping() {
                                         urlJournalIssn: urlJournalIssn,
                                         urlJournalEissn: urlJournalEissn
                                     }
+                                    /*M5*/
                                     console.log("seteando email de pagina+++++++++++++" + justEmail);
                                     emailLatest = justEmail;
                                     emailFound = "OK";
                                     cadenaSimple += nombre + "," + url + "," + "Found:" + emailFound + "," + justEmail + "," + urlJournalIssn + "," + urlJournalEissn + "\n";
+                                    /*M5: Estas instrucciones imprimen en consola un aviso que ha encontrado un correo y de igual forma lo imprime*/
                                 }
                             }
                         }
